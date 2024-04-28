@@ -1,5 +1,6 @@
 package org.sanje.pages.dashboard;
 
+import org.sanje.config.AppConfig;
 import org.sanje.factory.ComponentFactory;
 import org.sanje.pages.order.OrderPage;
 import org.sanje.utils.PageLayout;
@@ -9,13 +10,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class StuffDashboardPage extends PageLayout implements ActionListener
+public class StaffDashboardPage extends PageLayout implements ActionListener
 {
     JButton cafeMenuButton, saleInformationButton,b3;
     JPanel mainPanel;
 	
 
-    public StuffDashboardPage()
+    public StaffDashboardPage()
     {
         super("Home");
 
@@ -34,7 +35,8 @@ public class StuffDashboardPage extends PageLayout implements ActionListener
         saleInformationButton.setBounds(130,260,400,60);
         saleInformationButton.addActionListener(this);
         mainPanel.add(saleInformationButton);
-		
+
+        setBackground(mainPanel, AppConfig.backgroundImage);
 
         this.add(mainPanel);
        

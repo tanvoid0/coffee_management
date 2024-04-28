@@ -1,8 +1,12 @@
 package org.sanje.pages.dashboard;
 
 import org.sanje.config.AppConfig;
+import org.sanje.entity.User;
 import org.sanje.entity.UserRole;
 import org.sanje.factory.ComponentFactory;
+import org.sanje.pages.authentication.LoginPage;
+import org.sanje.pages.order.OrderPage;
+import org.sanje.service.AuthService;
 import org.sanje.utils.PageLayout;
 
 import javax.swing.*;
@@ -12,11 +16,14 @@ import java.awt.event.ActionListener;
 
 public class AdminDashboardPage extends PageLayout implements ActionListener
 {
-    JButton b1,b2,b3, registerButton, logoutButton, deleteProduct, editProduct, addProduct;
-	JLabel emailLabel, passwordLabel, roleLabel;
-    JPanel mainPanel, registrationPanel, itemPanel,p4;
-	JTextField emailField, passwordField,t3;
-	JComboBox roleComboBox;
+    final JButton registerButton, logoutButton, deleteProduct, editProduct, addProduct;
+	final JLabel emailLabel, passwordLabel, roleLabel;
+    final JPanel mainPanel, registrationPanel, itemPanel, salePanel;
+	final JTextField emailField;
+	final JPasswordField passwordField;
+	final JComboBox<UserRole> roleComboBox;
+	final AuthService authService = new AuthService();
+	UserRole userRole = UserRole.STAFF;
 
     public AdminDashboardPage()
     {
@@ -24,33 +31,11 @@ public class AdminDashboardPage extends PageLayout implements ActionListener
 
         mainPanel = ComponentFactory.generatePanel(Color.white, 650, 100);
 
-        b1 = new JButton("Registration");
-        b1.setFont(new Font("Comic Sans MS",Font.BOLD,15));
-        b1.setForeground(Color.black);
-        b1.setBounds(30,25,190,50);
-        b1.addActionListener(this);
-        mainPanel.add(b1);
-		
-		b2 = new JButton("Items");
-        b2.setFont(new Font("Comic Sans MS",Font.BOLD,15));
-        b2.setForeground(Color.black);
-        b2.setBounds(230,25,190,50);
-        b2.addActionListener(this);
-        mainPanel.add(b2);
-		
-		b3 = new JButton("Daily Sell");
-        b3.setFont(new Font("Comic Sans MS",Font.BOLD,15));
-        b3.setForeground(Color.black);
-        b3.setBounds(430,25,190,50);
-        b3.addActionListener(this);
-        mainPanel.add(b3);
-
 		JTabbedPane tabs = new JTabbedPane();
 
 
 		registrationPanel = new JPanel();
 		registrationPanel.setBounds(0,100,650,500);
-        registrationPanel.setBackground(Color.blue);
         registrationPanel.setLayout(null);
 		
 		emailLabel = new JLabel("Email");
@@ -75,11 +60,11 @@ public class AdminDashboardPage extends PageLayout implements ActionListener
 		emailField.setBounds(300,100,300,50);
 		registrationPanel.add(emailField);
 		
-		passwordField = new JTextField();
+		passwordField = new JPasswordField();
 		passwordField.setBounds(300,200,300,50);
 		registrationPanel.add(passwordField);
 		
-		roleComboBox = new JComboBox(UserRole.values());
+		roleComboBox = new JComboBox<>(UserRole.values());
 		roleComboBox.setFont(new Font("Comic Sans MS",Font.BOLD,15));
 		roleComboBox.setForeground(Color.black);
 		roleComboBox.setBounds(300,300,300,50);
@@ -103,7 +88,6 @@ public class AdminDashboardPage extends PageLayout implements ActionListener
 		
 		itemPanel = new JPanel();
 		itemPanel.setBounds(0,100,650,500);
-        itemPanel.setBackground(Color.blue);
         itemPanel.setLayout(null);
 		
 		deleteProduct = new JButton("DELETE ITEM");
@@ -111,7 +95,6 @@ public class AdminDashboardPage extends PageLayout implements ActionListener
 		deleteProduct.setForeground(Color.black);
 		deleteProduct.setBounds(125,250,400,50);
 		deleteProduct.addActionListener(this);
-		deleteProduct.setVisible(false);
 		itemPanel.add(deleteProduct);
 		
 		editProduct = new JButton("EDIT PRICE");
@@ -119,7 +102,6 @@ public class AdminDashboardPage extends PageLayout implements ActionListener
 		editProduct.setForeground(Color.black);
 		editProduct.setBounds(125,350,400,50);
 		editProduct.addActionListener(this);
-		editProduct.setVisible(false);
 		itemPanel.add(editProduct);
 		
 		addProduct = new JButton("ADD ITEM");
@@ -129,8 +111,18 @@ public class AdminDashboardPage extends PageLayout implements ActionListener
 		addProduct.addActionListener(this);
 		itemPanel.add(addProduct);
 
+		salePanel = ComponentFactory.generatePanel(null, AppConfig.width, AppConfig.height);
+		final JLabel saleLabel = ComponentFactory.generateLabel("Sale Information", null, null, 0, 0, 200, 50);
+		salePanel.add(saleLabel);
+
+		setBackground(registrationPanel, AppConfig.backgroundImage);
+		setBackground(itemPanel, AppConfig.backgroundImage);
+		setBackground(salePanel, AppConfig.backgroundImage);
+
 		tabs.addTab("Registration", registrationPanel);
 		tabs.addTab("Products", itemPanel);
+		tabs.addTab("Sales", salePanel);
+
 
 		this.add(tabs);
 		this.setSize(AppConfig.width, AppConfig.height);
@@ -139,14 +131,28 @@ public class AdminDashboardPage extends PageLayout implements ActionListener
 
     public void actionPerformed(ActionEvent ae)
     {
-		if(ae.getSource()==b1){
-			registrationPanel.setVisible(true);
-			itemPanel.setVisible(false);
+		try {
+			if (ae.getSource() == registerButton) {
+				final User user = new User((int) Math.random(), "", emailField.getText(), new String(passwordField.getPassword()), userRole);
+				authService.register(user);
+				if (user.getRole() == UserRole.ADMIN) {
+					navigate(new AdminDashboardPage());
+				} else if (user.getRole() == UserRole.STAFF) {
+					navigate(new StaffDashboardPage());
+				} else if (user.getRole() == UserRole.CUSTOMER) {
+					navigate(new OrderPage());
+				}
+
+			} else if (ae.getSource() == logoutButton) {
+				authService.logout();
+				navigate(new LoginPage());
+			} else if (ae.getSource() == roleComboBox) {
+				final Object role = roleComboBox.getSelectedItem();
+				userRole = UserRole.valueOf(role.toString());
+			}
+		} catch (final Exception ex) {
+			alert(ex.getMessage());
 		}
-		else if(ae.getSource()==b2){
-			itemPanel.setVisible(true);
-			registrationPanel.setVisible(false);
-		}      
     }
 }
 	

@@ -8,6 +8,8 @@ public final class AppConfig {
 
     public static Font labelFont = new Font("Serif", Font.BOLD, 20);
     public static Font buttonFont= new Font("Comic Sans MS",Font.BOLD,15);
-    public static ComponentDimension textFieldDimension = new ComponentDimension(200, 50);
+    public static Dimension textFieldDimension = new Dimension(200, 50);
     public static Dimension productImageDimension = new Dimension(150, 100);
+
+    public static String backgroundImage = "/images/background.png";
 }

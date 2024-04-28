@@ -1,5 +1,6 @@
 package org.sanje.pages;
 
+import org.sanje.config.AppConfig;
 import org.sanje.factory.ComponentFactory;
 import org.sanje.pages.authentication.LoginPage;
 import org.sanje.utils.PageLayout;
@@ -9,7 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HomePage extends PageLayout implements ActionListener
+public class HomePage extends PageLayout
 {
     final JButton nextButton;
     final JPanel mainPanel;
@@ -29,20 +30,21 @@ public class HomePage extends PageLayout implements ActionListener
         nextButton = ComponentFactory.generateButton(this, "NEXT", 530, 525, 100, 25);
         mainPanel.add(nextButton);
 
-        imageLabel = ComponentFactory.generateImage(this, "/images/coffee.png");
+        imageLabel = ComponentFactory.generateImage(this, AppConfig.backgroundImage);
 
         mainPanel.add(imageLabel, BorderLayout.CENTER);
         this.add(mainPanel);
        
     }
 
+    @Override
     public void actionPerformed(ActionEvent ae)
     {
        if (ae.getSource() == nextButton) {
            navigate(new LoginPage());
        }
     }
-	
+
 
 }
 	
