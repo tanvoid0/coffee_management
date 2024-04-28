@@ -4,69 +4,108 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dac12ca1-22fc-4c3c-af8c-42d931585349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/BillPay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/Home.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/Home.java.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/Start.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/Stuff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/User.java" afterDir="false" />
+    <list default="true" id="4f645f2e-ff2c-4770-9cd5-bd0b3ae47922" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/config/ComponentDimension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/entity/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/entity/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/factory/ComponentFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/pages/authentication/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/pages/order/components/ProductCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/utils/DummyData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sanje/utils/PageLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/coffee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/products/baklava.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/products/cappuccino.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/products/macchiato.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/products/sandwich.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sanje/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sanje/pages/dashboard/AdminDashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sanje/BillPay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sanje/pages/payment/PaymentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sanje/Home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sanje/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sanje/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sanje/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sanje/CafeManagementApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sanje/Stuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sanje/pages/dashboard/StuffDashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sanje/User.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2fTN83r6VLk1xxIrCoL1otgtOOP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2fjPk4OJfgFRmHihYO63oGJJRnf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CafeManagementApp.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.Start.executor": "Run",
+    "Application.org.sanje.pages.coffee.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/munvo/OneDrive/Documents/project/cafe_management/src/main/java/org/sanje",
+    "last_opened_file_path": "E:/projects/java/cafe_sanje/cafe_management/src/main/resources/images/products",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/munvo/OneDrive/Documents/project/cafe_management/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\munvo\OneDrive\Documents\project\cafe_management\src\main\java\org\sanje" />
+      <recent name="E:\projects\java\cafe_sanje\cafe_management\src\main\resources\images\products" />
+      <recent name="E:\projects\java\cafe_sanje\cafe_management\src\main\resources\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\projects\java\cafe_sanje\cafe_management\src\main\resources\images\products" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Start">
+  <component name="RunManager" selected="Application.CafeManagementApp">
+    <configuration name="CafeManagementApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sanje.CafeManagementApp" />
+      <module name="cafe_management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sanje.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.sanje.coffee.Main" />
       <module name="cafe_management" />
@@ -80,12 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.sanje.Start" />
+    <configuration name="org.sanje.pages.coffee.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sanje.pages.coffee.Main" />
       <module name="cafe_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.sanje.*" />
+          <option name="PATTERN" value="org.sanje.pages.order.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,34 +134,53 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Start" />
+        <item itemvalue="Application.CafeManagementApp" />
+        <item itemvalue="Application.org.sanje.pages.coffee.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dac12ca1-22fc-4c3c-af8c-42d931585349" name="Changes" comment="" />
-      <created>1713820948531</created>
+      <changelist id="4f645f2e-ff2c-4770-9cd5-bd0b3ae47922" name="Changes" comment="" />
+      <created>1714311653545</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713820948531</updated>
-      <workItem from="1713820949725" duration="2182000" />
-      <workItem from="1714049766552" duration="3587000" />
-      <workItem from="1714057157696" duration="732000" />
+      <updated>1714311653545</updated>
+      <workItem from="1714311654627" duration="5711000" />
+      <workItem from="1714317405000" duration="5576000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/sanje/Main.java</url>
-          <line>13</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/sanje/factory/ComponentFactory.java</url>
+          <line>49</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
