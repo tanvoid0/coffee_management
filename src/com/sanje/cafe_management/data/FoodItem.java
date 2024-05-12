@@ -5,7 +5,7 @@ public class FoodItem {
     private String description;
     private String image;
     private double price;
-    private int quantity;
+    private int quantity = 1;
     private FoodItemType type;
 
     public FoodItem(String title, String description, String image, double price, FoodItemType type) {
@@ -34,6 +34,10 @@ public class FoodItem {
 
     public double getPrice() {
         return this.price;
+    }
+
+    public double getTotalPrice() {
+        return quantity * price;
     }
 
     public void setPrice(double price) {

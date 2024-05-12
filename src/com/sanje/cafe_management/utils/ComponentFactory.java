@@ -18,6 +18,16 @@ import java.util.function.Function;
 
 public class ComponentFactory {
 
+    public static ImageIcon readImageIcon(String path) throws IOException {
+        final String currentDir = System.getProperty("user.dir");
+        final String imagePath = currentDir + path;
+        final BufferedImage image = loadImage(imagePath);
+        if (image != null) {
+            return new ImageIcon(image);
+        }
+        return null;
+    }
+
     public static JLabel readImage(JFrame frame, String path) {
         try {
             String currentDir = System.getProperty("user.dir");
